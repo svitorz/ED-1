@@ -59,7 +59,7 @@ int main(){
   }
 
   cout << endl << "Fim da execução.";
-  
+
   delete[] vectorX;
   delete[] vectorY;
   delete[] sumVector; 
