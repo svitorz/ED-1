@@ -26,9 +26,8 @@ void inserirItem(Pilha *pilha){
 void exibirItem(Pilha *pilha){
   if (pilha->qtd > 0) {
       std::cout << "O último elemento da pilha é " << pilha->dados[pilha->qtd - 1] << ".\n";
-  }else {
+  }else
     std::cout << "A pilha está vazia.\n";
-  }
 }
 
 void removerItem(Pilha *pilha){
