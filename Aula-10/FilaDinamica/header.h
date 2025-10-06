@@ -9,7 +9,6 @@ struct Node {
 struct Queue {
   Node* front;
   Node* rear;
-  int size;
 };
 
 Queue* setQueue();
@@ -20,4 +19,7 @@ void showElement(int x);
 void show(Queue* queue);
 void showFirst(Queue* queue);
 void flush(Queue* queue);
+int getTotalElement(Queue* queue);
+void showInverse(Queue* queue);
+void showLastElement(Queue* queue);
 #endif // !PILHA_DINAMICA

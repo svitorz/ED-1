@@ -6,6 +6,7 @@ Queue* setQueue() {
 
     if(queue == nullptr) {
         std::cout << "Erro ao alocar memória!\n";
+        flush(queue);
         exit(0);
     }
 
@@ -79,5 +80,54 @@ void showFirst(Queue* queue){
 void flush(Queue* queue) {
   while (!isEmpty(queue)) {
     remove(queue);
+  }
+  delete queue;
+}
+
+void showLastElement(Queue* queue){
+  if(!isEmpty(queue)){
+    showElement(queue->rear->value);
+  }
+}
+
+/**
+ *  Exibir fila inversa
+ * */
+void showInverse(Queue* queue){
+  if(!isEmpty(queue)){
+    Node* auxNode = queue->front;
+    int* values = new int[getTotalElement(queue)];
+    int i = 0;
+
+    while(auxNode != nullptr){
+      values[i] = auxNode->value;
+      auxNode = auxNode->next;
+      i++;
+    }
+
+    for(int j = i - 1; j >= 0; j--){
+      showElement(values[j]);
+    }
+
+    delete[] values;
+  } else {
+    std::cout << "Fila vazia!\n";
+  }
+}
+
+/**
+ * Calcula a quantidade de elementos.
+ * */
+int getTotalElement(Queue* queue){
+  int qtd = 0;
+  if (!isEmpty(queue)) {
+    Node *auxNode = queue->front;
+    while (auxNode != nullptr) {
+      qtd += 1;
+      auxNode = auxNode->next;
+    }
+    return qtd;
+  } else {
+    return qtd;
   }
 }
