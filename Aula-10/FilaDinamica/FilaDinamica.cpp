@@ -77,10 +77,7 @@ void showFirst(Queue* queue){
 }
 
 void flush(Queue* queue) {
-  Node* auxNode;
   while (!isEmpty(queue)) {
-    auxNode = queue->front;
-    queue->front = queue->front->next;
-    delete auxNode;
+    remove(queue);
   }
 }
