@@ -1,4 +1,3 @@
-````markdown
 # Pilhas — Descrição das imagens e exemplos
 
 Imagens nesta pasta:
@@ -42,6 +41,7 @@ void inserirItem(Pilha *pilha){
   }
 }
 ```
+
 ````
 
 Pilha Dinâmica (o que a imagem deve mostrar)
@@ -81,5 +81,4 @@ Referências no repositório (para leitura)
   - https://github.com/svitorz/ED-1/blob/e96f17b691f5c7e5d49feda07e8130bb6f033c9f/PilhaDinamica/MinhaImplementacao/PilhaDinamica.cpp
 
 ```
-
-```
+````

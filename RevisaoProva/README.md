@@ -1,4 +1,3 @@
-```markdown
 # Revisão — Estruturas de Dados (RevisaoProva)
 
 Esta pasta contém material de revisão para a prova de Estrutura de Dados 1 (2025/2). O objetivo é documentar as imagens e explicar as principais características e operações das estruturas mostradas.
@@ -21,5 +20,3 @@ Cada subpasta contém um README com:
 - exemplos de código em C++ retirados das implementações presentes neste repositório
 
 Os READMEs em `RevisaoProva/pilhas/README.md` e `RevisaoProva/filas/README.md` (anexos a seguir) usam como exemplos os códigos existentes no repositório (PilhaEstatica, PilhaDinamica, FilaEstatica e FilaDinamica).
-```
-

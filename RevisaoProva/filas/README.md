@@ -1,4 +1,3 @@
-````markdown
 # Filas — Descrição das imagens e exemplos
 
 Imagens nesta pasta:
@@ -38,6 +37,7 @@ x = A[head];
 head = (head + 1) % N;
 --count;
 ```
+
 ````
 
 Fila Dinâmica (o que a imagem deve mostrar)
@@ -76,4 +76,4 @@ Referências no repositório (para leitura)
 
 ```
 
-```
+````
