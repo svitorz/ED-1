@@ -77,3 +77,6 @@ Referências no repositório (para leitura)
 ```
 
 ````
+
+[Fila Estática](./fila_estatica.png)
+[Fila Dinâmica](./fila_dinamica.png)

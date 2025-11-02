@@ -79,6 +79,7 @@ Referências no repositório (para leitura)
   - https://github.com/svitorz/ED-1/blob/e96f17b691f5c7e5d49feda07e8130bb6f033c9f/PilhaEstatica/PilhaEstatica/headers/header.h
 - Pilha dinâmica (minha implementacao): PilhaDinamica/MinhaImplementacao/PilhaDinamica.cpp
   - https://github.com/svitorz/ED-1/blob/e96f17b691f5c7e5d49feda07e8130bb6f033c9f/PilhaDinamica/MinhaImplementacao/PilhaDinamica.cpp
-
-```
 ````
+
+[Pilha Dinâmica](./pilha_dinamica.png)
+[Pilha Estatica](./pilha_dinamica.png)
