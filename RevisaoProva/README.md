@@ -1,15 +1,25 @@
+```markdown
 # Revisão — Estruturas de Dados (RevisaoProva)
 
-Esta pasta contém material de revisão para a prova: figuras e explicações sobre pilhas e filas.
+Esta pasta contém material de revisão para a prova de Estrutura de Dados 1 (2025/2). O objetivo é documentar as imagens e explicar as principais características e operações das estruturas mostradas.
 
 Estrutura do diretório:
+
 - pilhas/ — imagens e explicações sobre Pilha Estática e Pilha Dinâmica
-- filas/  — imagens e explicações sobre Fila Estática e Fila Dinâmica
+  - pilha_estatica.png
+  - pilha_dinamica.png
+- filas/ — imagens e explicações sobre Fila Estática e Fila Dinâmica
+  - fila_estatica.png
+  - fila_dinamica.png
 
-Imagens esperadas (nomes sugeridos):
-- pilha_estatica.png  — representando uma pilha implementada com vetor (array)
-- pilha_dinamica.png  — representando uma pilha implementada com lista ligada
-- fila_estatica.png   — representando uma fila implementada com vetor circular
-- fila_dinamica.png   — representando uma fila implementada com lista ligada
+Cada subpasta contém um README com:
 
-Use as README nas subpastas (`pilhas/README.md` e `filas/README.md`) para obter explicações detalhadas e exemplos de código em C++.
+- descrição da(s) imagem(ns)
+- operações básicas (ex.: push/pop, enqueue/dequeue)
+- condições de erro (overflow/underflow)
+- complexidade
+- exemplos de código em C++ retirados das implementações presentes neste repositório
+
+Os READMEs em `RevisaoProva/pilhas/README.md` e `RevisaoProva/filas/README.md` (anexos a seguir) usam como exemplos os códigos existentes no repositório (PilhaEstatica, PilhaDinamica, FilaEstatica e FilaDinamica).
+```
+
