@@ -13,8 +13,8 @@ List* setup()
     List *list = new (std::nothrow) List;
 
     if(list == nullptr){
-        std::cout << "Error! No memory space.";
-        exit(0);
+        std::cerr << "Error! No memory space.";
+        std::exit(EXIT_FAILURE);
     }
     //define a lista como vazia
     list->head = nullptr;
@@ -23,23 +23,23 @@ List* setup()
     return list;
 }
 
-bool isListEmpty(List* list)
+bool isListEmpty(const List* list)
 {
-    //verifica se o inicio da lista é nulo (vazio)
-    return (list->head==nullptr);
+  if (list == nullptr) return true;
+
+  //verifica se o inicio da lista é nulo (vazio)
+  return (list->head==nullptr);
 }
 
-bool push(List* list)
+bool push(List* list, int value)
 {
-    int value;
-    std::cout << "Digite um valor a ser inserido: ";
-    std::cin >> value;
-
+    if (list == nullptr) return false;
+    
     // Cria um novo nó 
     Node *node = new (std::nothrow) Node;
 
     if(node == nullptr){
-        std::cout << "Não há espaço na memória."; 
+        std::cerr << "Não há espaço na memória."; 
         return false;
     }
 
@@ -53,74 +53,94 @@ bool push(List* list)
     } else {
         //senao, procura o lugar correto para inserir
         // cria dois nós auxiliares
-        Node *noAnt, *noAux = list->head; 
+        Node *prev = nullptr;
+        Node *current = list->head; 
 
         /**
          * enquanto o noAux for diferente de nulo (final da lista)
          * e o valor a ser inserido for menor que o proximo
          */
-        while (noAux != nullptr && node->value > noAux->value) {
+        while (current != nullptr && current->value < value) {
             // define o no anterior como o nó auxiliar.
-            noAnt = noAux;
+            prev = current;
             // define o auxiliar como o proximo do auxiliar, para percorrer a lista 
-            noAux = noAux->next;
+            current = current->next;
         }
-        if (noAux==list->head) {
-            node->next = noAux;
+
+        if (prev == nullptr) {
+            node->next = list->head;
             list->head = node;
         } else {
-            noAnt->next=node;
-            node->next=noAux;
+            prev->next = node;
+            node->next = current;
         }
     }
 
 
     list->quantity += 1;
+    return true;
 }
 
-void pull(List* list, int value)
+bool pull(List* list, int value)
 {
-    cout << "teste";
-    if(isListEmpty(list)){
-        Node *noAnt, *noAux = list->head;
+    if (list == nullptr) return false;
 
-        /**
-         * Percorre os dados até encontrar um numero maior que o valor a ser removido
-         * ou até chegar ao fim da lista.
-         */
-        while(noAux != nullptr && value > noAux->value)
-        {
-            noAnt = noAux;
-            noAux = noAux->next;
-        }
-
-        if (noAux->value == value){
-            if(noAux == list->head) 
-                list->head = noAux->next;
-            else
-                noAnt->next = noAux->next;
-            delete noAux;
-            list->quantity--;
-        } else {
-            std::cout << "Elemento não está na lista.";
-        }
+    if(isListEmpty(list)) {
+        std::cout << "A lista está vazia.";
+        return false;
     }
+
+    Node *prev = nullptr;
+    Node *current = list->head;
+
+    /**
+      * Percorre os dados até encontrar um numero maior que o valor a ser removido
+      * ou até chegar ao fim da lista.
+      */
+    while(current != nullptr && current->value < value)
+    {
+        prev = current;
+        current = current->next;
+    }
+    
+    if(prev == nullptr) {
+        //remover o primeiro nó
+        list->head = current->next;
+    } else {
+        //remover nó do meio ou final
+        prev->next = current->next;
+    }
+
+    list->quantity -= 1;
+    delete current;
+    return true;
 }
 
-
-void show(List* list) 
-{ 
-    if(isListEmpty(list)){
-        Node *noAux = list->head;
-        while(noAux != nullptr){
-            cout << " --> ";
-            noAux = noAux->next;
-        }
+void show(const List* list)
+{
+    if (list == nullptr) {
+        std::cout << "Lista inválida.\n";
+        return;
     }
+
+    if (isListEmpty(list)) {
+        std::cout << "Lista vazia.\n";
+        return;
+    }
+
+    Node *noAux = list->head;
+    while(noAux != nullptr){
+        std::cout << noAux->value;
+        if (noAux->next != nullptr) std::cout << " -> ";
+        noAux = noAux->next;
+    }
+    std::cout << '\n';
 }
 
-void kill(List* list) 
-{ 
+void kill(List* list)
+{
+     if (list == nullptr) return;
+
      Node *noAux = list->head;
 
      while(noAux != nullptr) {

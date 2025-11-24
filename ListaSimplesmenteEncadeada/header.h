@@ -12,9 +12,9 @@ struct List {
 };
 
 List* setup();
-bool isListEmpty(List* list);
-void pull(List* list, int value);
-bool push(List* list);
-void show(List* list);
+bool isListEmpty(const List* list);
+bool pull(List* list, int value);
+bool push(List* list, int value);
+void show(const List* list);
 void kill(List* list); 
 #endif // !LISTA_SIMPLESMENTE_ENCADEADA_INCLUDED
