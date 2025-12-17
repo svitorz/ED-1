@@ -2,6 +2,7 @@
 #include "listaDupla.h"
 
 using namespace std;
+
 char menuInicial();
 char menuSaida();
 
@@ -34,7 +35,7 @@ int main(){
             cout << "Há " << contarElementosPares(lista) << " elementos pares na lista.\n";
             break;
         case '6':
-          exibirElementosEQuantidadeDeNPares(lista);
+          exibirTodosECalcularElemPares(lista);
           break;
         case 'S': cout <<"Saindo do programa!\n"; break;
         default: cout<< "Opção inválida!";
@@ -52,7 +53,7 @@ char menuInicial(){
             "3 - exibir elementos cadastrados\n"
             "4 - verificar se uma informação está na lista dupla.\n"
             "5 - verificar a quantidade de numeros pares na lista dupla.\n"
-            "6 - exbibir elementos e verificar a quantidade de numeros pares na lista dupla.\n"
+            "6 - exibir elementos e verificar a quantidade de numeros pares na lista dupla.\n"
             "S - sair do menu.\n"
             "--> ";
     fflush(stdin);

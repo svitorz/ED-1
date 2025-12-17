@@ -154,3 +154,37 @@ int contarElementosPares(Lista *lista)
 
     return qtdElem;
 }
+
+/**
+ * Criar uma função para percorrer uma lista ordenada duplamente encadeada. 
+ * Deverá exibir o número, a sua posição e se ele é par ou ímpar. 
+ * Faça as validações e verificações necessárias (lista vazia). 
+ * Exiba a quantidade de elementos que são pares.
+ * */
+void exibirTodosECalcularElemPares(Lista *lista)
+{
+  int quantidadeElementosPares = 0;
+  int index = 0;
+  if(listaEhVazia(lista) != 0){
+    No *aux = lista->inicioLista;
+
+    while(aux != nullptr){
+      std::cout << "Valor do elemento: " << aux->info << endl;
+      std::cout << "Indice do elemento: " << index << endl;
+
+      if (aux->info % 2 == 0){
+        std::cout << "E o elemento eh par." << endl;
+        quantidadeElementosPares += 1;
+      } else {
+          std::cout << "E o elemento eh impar." << endl;
+      }
+
+      index += 1;
+      aux = aux->prox;
+    }
+
+    std::cout << "A lista possui " << quantidadeElementosPares << " elementos pares." << endl;
+  } else {
+    std::cout << "A lista esta vazia.";
+  }
+}

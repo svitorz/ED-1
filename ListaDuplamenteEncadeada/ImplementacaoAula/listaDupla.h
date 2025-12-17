@@ -20,5 +20,6 @@ void exibirElementosListaDupla(Lista *lista);
 void excluirListaDupla(Lista *lista);
 void excluirListaDupla(Lista *lista);
 int contarElementosPares(Lista *lista);
+void exibirTodosECalcularElemPares(Lista *lista);
 
 #endif // LISTADUPLA_H_INCLUDED
